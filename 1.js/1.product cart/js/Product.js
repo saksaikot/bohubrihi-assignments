@@ -1,48 +1,13 @@
-const PRODUCTS = [
-  {
-    name: "Nutella",
-    description: `Nutella ® is an inspiring tale of love and passion`,
-    price: 499,
-  },
-  {
-    name: "Oil",
-    description:
-      "Fresh Fortified Soyabean Oil follows 3 steps of refining process",
-    price: 712,
-  },
-  {
-    name: "Pineapple",
-    description: "Cherry Pineapple",
-    price: 19,
-  },
-  {
-    name: "Malta",
-    description:
-      "Malta, a variety of orange, is a popular citrus fruit cultivated in hot climate.",
-    price: 239,
-  },
-  {
-    name: "Yogurt",
-    description: "Brac Dairy & Food Project, Aarong Dairy Sour Yogurt",
-    price: 90,
-  },
-];
-
 const productContainer = document.querySelector("#product-container");
+const cartContainer = document.querySelector("#cart-container");
 class Product {
-  constructor() {
+  constructor(products) {
     this.cart = {};
-    //document.querySelector(".product").appendChild(this.productNode());
-    console.log("ok");
-    this.products = PRODUCTS;
+    this.products = products;
     this.renderProducts();
-  }
-
-  _insertAfter(newNode, existingNode) {
-    existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
+    this.cartTotal = 0;
   }
   renderProducts() {
-    console.log(this.products);
     this.products.forEach((product) => {
       productContainer.appendChild(this.productNode(product));
     });
@@ -50,10 +15,54 @@ class Product {
   productNode(product) {
     const div = document.createElement("div");
     div.innerHTML = this.productHtml(product);
-    div
-      .querySelector("a")
-      .addEventListener("click", () => console.log("clicked"));
+    div.querySelector("a").addEventListener("click", (e) => {
+      e.preventDefault();
+      this.addToCart(product);
+    });
     return div;
+  }
+  addToCart(product) {
+    if (!this.cart[product.id]) {
+      this.cartTotal += product.price;
+      this.cart[product.id] = product;
+      this.renderProductCart(product);
+    }
+  }
+  renderProductCart(product) {
+    cartContainer.appendChild(this.cartNode(product));
+    this.renderTotalCart();
+  }
+  cartNode(product) {
+    const div = document.createElement("div");
+    div.innerHTML = this.cartHtml(product);
+    div
+      .querySelector("button")
+      .addEventListener("click", (e) => this.removeFromCart(e, product));
+    return div;
+  }
+  renderTotalCart() {
+    document.querySelector("#cart-total").innerHTML = `
+    <h3 class="flex-grow-1 ms-2 ">Total</h3>
+    <p class="mx-2">${this.cartTotal} BDT</p>
+    <p style="width:5.4rem"></p>`;
+  }
+  removeFromCart(e, product) {
+    this.cartTotal -= product.price;
+    e.target.parentNode.remove();
+    delete this.cart[product.id];
+    this.renderTotalCart();
+    if (Object.keys(this.cart).length === 0) {
+      document.querySelector("#cart-total").innerHTML = "";
+    }
+  }
+  cartHtml({ name, price }) {
+    return `          <div class="card d-flex flex-row w-100 justify-content-center align-items-center">
+    <img style="width: 4rem;" src="https://dummyimage.com/200x150/000/fff.jpg&text=${name}"
+      alt="Card image cap" />
+    <p class="flex-grow-1 ms-2 ">${name}</p>
+    <p class="mx-2">${price} BDT</p>
+    <button class="btn btn-danger me-2"> remove</button>
+  </div>`;
   }
   productHtml({ name, description, price }) {
     return `<div class="card" style="width: 10rem;">
