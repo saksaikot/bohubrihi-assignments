@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expression Validation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="module" src="js/app.js"></script>
+  <style>
+    .container {
+      max-width: 800px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-4">
+    <h4 class="text-center m-5">Expression Validation</h4>
+    <div class="row">
+      <div class="col-6">
+        <h5>Select the validation type</h5>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="expressionValidation" value="email" id="email" checked />
+          <label class="form-check-label" for="email">
+            Email
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="expressionValidation" value="phone" id="phone" />
+          <label class="form-check-label" for="phone">
+            Phone
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="expressionValidation" value="zipCode" id="zipCode" />
+          <label class="form-check-label" for="zipCode">
+            Zip code
+          </label>
+        </div>
+      </div>
+      <div class="col-6">
+        <h5>Your input</h5>
+        <input type="text" class="form-control" id="validationInput" placeholder="Your input here" required>
+        <div class="valid-feedback" id="validationMessage">
+        </div>
+        <div class="col-12 mt-2">
+          <button class="btn btn-primary" type="submit" id='check-input'>Check input</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
