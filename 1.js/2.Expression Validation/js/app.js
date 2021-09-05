@@ -14,7 +14,6 @@ function handleCheckInput() {
     "[name=expressionValidation]:checked"
   ).value;
   const result = validator.validate(type, validationInputNode.value);
-  console.log(result);
   showValidationResult(result);
 }
 
