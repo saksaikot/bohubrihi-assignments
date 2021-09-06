@@ -20,3 +20,4 @@
 
 - 1.1 [Product-cart](https://saksaikot.github.io/bohubrihi-assignments/1.js/1.product%20cart/)
 - 1.2 [Expression Validation](https://saksaikot.github.io/bohubrihi-assignments/1.js/2.Expression%20Validation/)
+- 1.3 [Number Guesser](https://saksaikot.github.io/bohubrihi-assignments/1.js/3.Number%20Guesser%20Game/)

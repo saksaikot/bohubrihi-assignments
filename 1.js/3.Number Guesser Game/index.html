@@ -18,29 +18,30 @@
 
 <body>
   <div class="container">
-    <h4 class="text-center  my-5">Welcome to Guessing Game</h5>
-      <div class="alert alert-warning text-center" role="alert">
-        You lost!!!
-      </div>
-      <div class="row border m-3">
-        <div class="alert alert-secondary text-center" role="alert">
-          You guessed less
-        </div>
-        <div class="col-5">
-          <div class="alert alert-secondary" role="alert">
-            You have <span>3</span> chances left
-          </div>
-        </div>
-        <div class="col-7">
-          <input type="text" class="form-control" id="userNumber" placeholder="Your number here" required>
-          <button class="btn btn-primary my-3" type="submit">Check Now</button>
+    <h4 class="text-center  mt-5 mb-2">Welcome to Guessing Game</h4>
+    <h6 class="text-center m-1">Computer will choose a number between 1 to 10, you need to guess the number in 3 try
+    </h6>
 
+    <div class="alert alert-info text-center " id='resultDiv'>
+    </div>
+    <div class="row border m-3">
+      <div class="alert alert-secondary text-center " id="messageDiv">
+      </div>
+      <div class="col-5">
+        <div class="alert alert-secondary">
+          You have <span id="chanceDiv">3</span> chances left
         </div>
       </div>
-      <div class="text-center m-4">
+      <div class="col-7">
+        <input type="text" class="form-control" id="userInput" placeholder="Your number here" required>
+        <button class="btn btn-primary my-3" id="checkButton" type="submit">Check Now</button>
 
-        <button class="btn btn-primary text-center" type="submit">Play</button>
       </div>
+    </div>
+    <div class="text-center m-4">
+
+      <button class="btn btn-primary text-center" id="playButton" type="submit">Play</button>
+    </div>
 
   </div>
 </body>
