@@ -15,9 +15,25 @@
   - Criteria Specifications:
     - Error:The code is error free.
     - Multiple Fields: At least 3 input fields to validate
+- # 1.3 Making a Number Guesser Game Using JavaScript
+  - You will make a game where user has to input a number between a range. User will have 3 chances to guess the correct number.
+  - আপনি কোডে দুইটা নাম্বার সেট করে দিবেন ধরেন, let low = 1; let high = 10;
+  - এই রেইঞ্জের মধ্যে একটা integer নাম্বার রেন্ডম ভাবে সিলেক্ট করে correcr_ans নামে একটা ভ্যারিয়েবলে স্টোর করবেন। কিভাবে দুইটা নাম্বারের রেইঞ্জের মধ্যে থেকে একটা র‍্যান্ডম নাম্বার নিতে হয় সেটা নিচের লিংকে গেলে হেল্প পাবেন, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#:~:text=The%20Math.,scale%20to%20your%20desired%20range
+  - এবার ইউজার কে বলবেন এই রেইঞ্জের মধ্যে একটা নাম্বার অনুমান করতে (prompt ফাংশন ইউজ করতে পারেন)
+  - একটা লুপ ৩ বার চালিয়ে ইউজার থেকে আন্সার চাইবেন, লুপের ভিতর এভাবে কন্ডিশন লিখবেন, যদি ইউজার কারেক্ট আন্সারের চেয়ে ছোট নাম্বার ইনপুট দেয় তাহলে alert আসবে Correct answer is greater! আর বড় দিলে আসবে Correct answer is smaller! আর যদি কারেক্ট আন্সার ই দেয় তাহলে You Win দেখায়ে লুপ ব্রেক করবেন
+  - ৩ বারেও কারেক্ট আন্সার দিতে না পারলে You lose! দেখাবে!
+  - নিচের টেবিলের ক্রাইটেরিয়া অনুযায়ী আমরা এসাইনমেন্টটি দেখবো এবং ফীডব্যাক দিবোঃ
+  - Criteria:Specifications
+    - Error: The code is error free.
+    - Number of Chances: Players will get 3 chances to play.
+    - Giving Hint: Showing hint if the correct answer is smaller or greater
+    - Showing Chances: Players can see how many chances are left.
+    - Showing Result: Show the player if he Win or Lose.
+    - Restart:Players can restart after the game is over.
+    - Disable Field: The input field will be disabled after the game is over.
 
 # JS assignment links
 
 - 1.1 [Product-cart](https://saksaikot.github.io/bohubrihi-assignments/1.js/1.product%20cart/)
 - 1.2 [Expression Validation](https://saksaikot.github.io/bohubrihi-assignments/1.js/2.Expression%20Validation/)
-- 1.3 [Number Guesser](https://saksaikot.github.io/bohubrihi-assignments/1.js/3.Number%20Guesser%20Game/)
+- 1.3 [Number Guesser](https://saksaikot.github.io/bohubrihi-assignments/1.js/3.Number%20Guesser%20Game/index.html)
