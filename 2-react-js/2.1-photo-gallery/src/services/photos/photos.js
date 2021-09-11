@@ -44,7 +44,6 @@ const getAllUrl = () => {
   return imagesUrl;
 };
 
-console.log(getAllUrl());
 function imagePath(type, name, imageName) {
   const PATH = "images/nature-images-unplash/";
   return PATH + name + type + imageName;

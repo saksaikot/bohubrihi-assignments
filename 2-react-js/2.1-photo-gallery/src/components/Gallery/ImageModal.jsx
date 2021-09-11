@@ -13,7 +13,7 @@ export default function ImageModal({
 }) {
   const { feedbacks } = usePhoto();
   const currentFeedbacks = feedbacks.filter((f) => f.image === show.large);
-  console.log(currentFeedbacks, "currentFeedbacks");
+  // console.log(currentFeedbacks, "currentFeedbacks");
   return (
     <>
       {/* <Button variant="primary" onClick={handleShow}>
@@ -48,10 +48,7 @@ export default function ImageModal({
               ))}
           </div>
         </Modal.Body>
-        {console.log(
-          usePhoto().feedbacks.filter((f) => f.image === show.large),
-          "modal feedback"
-        )}
+
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close

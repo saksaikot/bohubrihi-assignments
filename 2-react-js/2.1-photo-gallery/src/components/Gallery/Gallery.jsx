@@ -16,12 +16,17 @@ export default function Gallery() {
   const handleClose = () => setSelectedImage(false);
   const handleShow = (imageUrl) => {
     setSelectedImage(imageUrl);
-    console.log(imageUrl);
+    // console.log(imageUrl);
+  };
+  const handleFilter = (name) => {
+    if (name === "all") return setGalleryImages(images.images);
+    setGalleryImages(images.images.filter((i) => i.category === name));
+    // console.log("name", name);
   };
 
   return (
     <div>
-      <Categories list={category} />
+      <Categories list={category} handleFilter={handleFilter} />
       <Images images={galleryImages} handleShow={handleShow} />
       <ImageModal
         {...{ handleClose, handleShow, currentUser }}

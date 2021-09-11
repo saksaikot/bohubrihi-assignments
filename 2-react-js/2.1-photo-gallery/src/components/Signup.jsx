@@ -32,7 +32,7 @@ export default function Signup() {
     );
     setLoading(false);
     if (signupResultError) return setError(signupResultError.message);
-    console.log(signupResult);
+    // console.log(signupResult);
 
     setError("");
     history.push("/gallery");

@@ -14,7 +14,6 @@ export default function PhotoProvider({ children }) {
   useEffect(() => {
     const dbFeedbackArray = [];
     dbFeedbacks.map((v) => dbFeedbackArray.push({ key: v.key, ...v.val() }));
-    console.log(dbFeedbackArray, "dbFeedbackArray");
     setFeedbacks([...dbFeedbackArray]);
     // console.log(feedbacks, "feedbacks");
   }, [dbFeedbacks]);

@@ -21,7 +21,7 @@ export default function Login() {
     );
     setLoading(false);
     if (loginResultError) return setError(loginResultError.message);
-    console.log(loginResult);
+    // console.log(loginResult);
 
     setError("");
     history.push("/gallery");
