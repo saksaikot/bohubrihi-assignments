@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/Gallery/gallery.css"],"names":[],"mappings":"AAAA,eACE,UAAW,CACX,WAAY,CACZ,gBAAiB,CACjB,eACF","file":"main.3c781d1f.chunk.css","sourcesContent":[".gallery-image {\r\n  width: 100%;\r\n  height: 100%;\r\n  object-fit: cover;\r\n  overflow: hidden;\r\n}\r\n"]}
