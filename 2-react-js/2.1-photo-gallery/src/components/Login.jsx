@@ -4,6 +4,7 @@ import { Card, Form, Button, Alert } from "react-bootstrap";
 import { useAuth, currentUser } from "../contexts/AuthContext";
 import { of } from "await-of";
 import { Link, useHistory } from "react-router-dom";
+import routePaths from "./routerPaths";
 
 export default function Login() {
   const emailRef = useRef();
@@ -24,7 +25,7 @@ export default function Login() {
     // console.log(loginResult);
 
     setError("");
-    history.push("/gallery");
+    history.push(routePaths.gallery);
   }
 
   return (
@@ -47,13 +48,14 @@ export default function Login() {
               Login
             </Button>
             <div className="w-100 text-center mt-2">
-              Forget password? <Link to="/reset-password">reset password</Link>
+              Forget password?{" "}
+              <Link to={routePaths.resetPassword}>reset password</Link>
             </div>
           </Form>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">signup</Link>
+        Need an account? <Link to={routePaths.signup}>signup</Link>
       </div>
     </div>
   );

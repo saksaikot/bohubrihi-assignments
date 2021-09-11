@@ -4,6 +4,7 @@ import { Card, Form, Button, Alert } from "react-bootstrap";
 import { useAuth, currentUser } from "../contexts/AuthContext";
 import { of } from "await-of";
 import { Link } from "react-router-dom";
+import routePaths from "./routerPaths";
 
 export default function ResetPassword() {
   const emailRef = useRef();
@@ -50,7 +51,7 @@ export default function ResetPassword() {
         </Card.Body>
       </Card>
       <div className="w-100 text-center my-3">
-        Or <Link to="/login">Log in</Link>
+        Or <Link to={routePaths.login}>Log in</Link>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { Card, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import { of } from "await-of";
 import { useHistory, Link } from "react-router-dom";
+import routePaths from "./routerPaths";
 
 export default function Dashboard() {
   const [error, setError] = useState("");
@@ -14,7 +15,7 @@ export default function Dashboard() {
     const [logoutResult, logoutResultError] = await of(logout());
     if (logoutResultError) return setError("Logging out failed");
     setError("");
-    history.push("/login");
+    history.push(routePaths.login);
   };
 
   return (

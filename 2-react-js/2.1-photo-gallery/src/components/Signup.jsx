@@ -5,6 +5,7 @@ import { useAuth, currentUser } from "../contexts/AuthContext";
 import { of } from "await-of";
 import { json } from "body-parser";
 import { Link, useHistory } from "react-router-dom";
+import routePaths from "./routerPaths";
 
 export default function Signup() {
   const nameRef = useRef();
@@ -35,7 +36,7 @@ export default function Signup() {
     // console.log(signupResult);
 
     setError("");
-    history.push("/gallery");
+    history.push(routePaths.gallery);
   }
 
   return (
@@ -68,7 +69,7 @@ export default function Signup() {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Already have account? <Link to="/login">Log in</Link>
+        Already have account? <Link to={routePaths.login}>Log in</Link>
       </div>
     </div>
   );

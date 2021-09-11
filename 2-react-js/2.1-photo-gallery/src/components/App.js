@@ -12,6 +12,7 @@ import ResetPassword from "./ResetPassword";
 import UpdateProfile from "./UpdateProfile";
 import NavTop from "./NavTop";
 import Gallery from "./Gallery/Gallery";
+import routePaths from "./routerPaths";
 
 function App() {
   return (
@@ -25,15 +26,14 @@ function App() {
           >
             <div className="w-100" style={{ maxWidth: "1080px" }}>
               <Switch>
-                <PrivateRoute exact path="/" component={Gallery} />
-                <PrivateRoute
-                  path="/update-profile"
-                  component={UpdateProfile}
+                <Route exact path={routePaths.home} component={Gallery} />
+                <Route path={routePaths.signup} component={Signup} />
+                <Route path={routePaths.login} component={Login} />
+                <Route
+                  path={routePaths.resetPassword}
+                  component={ResetPassword}
                 />
-                <Route path="/signup" component={Signup} />
-                <Route path="/login" component={Login} />
-                <Route path="/reset-password" component={ResetPassword} />
-                <Route path="/gallery" component={Gallery} />
+                <Route path={routePaths.gallery} component={Gallery} />
               </Switch>
             </div>
           </Container>

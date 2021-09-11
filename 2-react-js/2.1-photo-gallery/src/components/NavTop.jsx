@@ -3,6 +3,8 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 
 import { Link, useHistory } from "react-router-dom";
+import routePaths from "./routerPaths";
+
 export default function NavTop() {
   const { logout, currentUser } = useAuth();
   const history = useHistory();
@@ -10,15 +12,15 @@ export default function NavTop() {
   const handleLogout = async () => {
     await logout();
     // if (logoutResultError) return setError("Logging out failed");
-    history.push("/login");
+    history.push(routePaths.login);
   };
 
   const Auth = (
     <Nav>
-      <Link to="/login" className="nav-link">
+      <Link to={routePaths.login} className="nav-link">
         Login
       </Link>
-      <Link to="/signup" className="nav-link">
+      <Link to={routePaths.signup} className="nav-link">
         Signup
       </Link>
     </Nav>
@@ -33,14 +35,14 @@ export default function NavTop() {
   return (
     <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark">
       <Container>
-        <Link to="/gallery" className="navbar-brand">
+        <Link to={routePaths.gallery} className="navbar-brand">
           PhotoG
         </Link>
         {/* <Navbar.Brand href="#home">PhotoG</Navbar.Brand> */}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Link to="/gallery" className="nav-link">
+            <Link to={routePaths.gallery} className="nav-link">
               Gallery
             </Link>
           </Nav>
