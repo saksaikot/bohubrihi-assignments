@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "await-of": "^3.1.1"
+  }
+}

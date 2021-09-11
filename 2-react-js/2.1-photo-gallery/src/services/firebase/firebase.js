@@ -1,5 +1,7 @@
-import firebase from "firebase/app";
-import "firebase/auth";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/database";
+
 import dbActions from "./dbActions";
 
 const app = firebase.initializeApp({
@@ -10,9 +12,10 @@ const app = firebase.initializeApp({
   messagingSenderId:
     process.env.REACT_APP_WDS_AUTH_FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_WDS_AUTH_FIREBASE_APP_ID,
+  databaseURL: process.env.REACT_APP_WDS_AUTH_FIREBASE_DATABASE_URL,
 });
 export const auth = app.auth();
 export default app;
 export const db = {
-  comments: dbActions(app.database().ref("/comments")),
+  feedbacks: dbActions(app.database().ref("/feedbacks")),
 };
